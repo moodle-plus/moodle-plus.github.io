@@ -33,21 +33,21 @@ const experimentalCompatibleWebsites = [
 				<div class="text-center text-xs opacity-70">パソコン版のChrome, Firefox, Edgeに対応しています</div>
 			</div>
 			<img src="/img/screenshot_01.png" alt="Moodle Plus" class="w-full max-w-xl mx-auto rounded-xl mb-8" />
-			<details class="w-full max-w-xl mx-auto rounded-xl bg-white border border-gray-300 dark:border-gray-700 overflow-clip group mb-8">
-				<summary class="text-sm px-4 py-2 bg-white hover:bg-gray-100 group-open:border-b border-gray-300 dark:border-gray-700 cursor-pointer">対応大学（Moodleサイト）一覧</summary>
+			<details class="w-full max-w-xl mx-auto rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 overflow-clip group mb-8">
+				<summary class="text-sm px-4 py-2 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 group-open:border-b border-gray-300 dark:border-gray-700 cursor-pointer">対応大学（Moodleサイト）一覧</summary>
 				<div class="p-4 text-sm">
 					<h2 class="font-bold">サポート中</h2>
 					<p class="mb-3 text-xs opacity-70">これらのMoodleではMoodle Plusの動作確認ができています。</p>
 					<ul class="pl-6 list-[revert] space-y-1 mb-6">
 						{compatibleWebsites.map((w) => (
-							<li>{w.name}（<code class="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
+							<li>{w.name}（<code class="rounded bg-gray-100 dark:bg-gray-700 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
 						))}
 					</ul>
 					<h2 class="font-bold">試験対応中</h2>
 					<p class="mb-3 text-xs opacity-70">これらのMoodleでは動作テストが不十分なため、試験対応中としています。</p>
 					<ul class="pl-6 list-[revert] space-y-1">
 						{experimentalCompatibleWebsites.map((w) => (
-							<li>{w.name}（<code class="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
+							<li>{w.name}（<code class="rounded bg-gray-100 dark:bg-gray-700 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
 						))}
 					</ul>
 				</div>
