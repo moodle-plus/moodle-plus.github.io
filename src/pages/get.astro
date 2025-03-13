@@ -1,0 +1,43 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="インストール">
+    <Fragment slot="head">
+		<meta name="robots" content="noindex" />
+	</Fragment>
+
+    <noscript>
+        <p>JavaScriptを有効にしてください。</p>
+    </noscript>
+</Layout>
+
+<script>
+    import Parser from 'ua-parser-js';
+
+    const stores = {
+        chrome: 'https://chromewebstore.google.com/detail/moodle-plus/nncecmfhijadiddmmnajjaemlpnknplh',
+        firefox: 'https://addons.mozilla.org/ja/firefox/addon/moodle-plus/',
+        edge: 'https://microsoftedge.microsoft.com/addons/detail/odiokdoddkknajccbiclcbfjpbjijlhc',
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const parser = new Parser();
+        const result = parser.getResult();
+        
+        switch(result.browser.name) {
+            case 'Chrome':
+                location.replace(stores.chrome);
+                break;
+            case 'Firefox':
+                location.replace(stores.firefox);
+                break;
+            case 'Edge':
+                location.replace(stores.edge);
+                break;
+            default:
+                location.replace(stores.chrome);
+                break;
+        }
+    });
+</script>

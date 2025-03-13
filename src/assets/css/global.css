@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+    --font-sans: 'PT Sans', 'Biz UDGothic', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+
+    --color-primary-50: #f3faf8;
+    --color-primary-100: #d6f1e9;
+    --color-primary-200: #ade2d4;
+    --color-primary-300: #7cccba;
+    --color-primary-400: #68bbaa;
+    --color-primary-500: #379584;
+    --color-primary-600: #2a776a;
+    --color-primary-700: #256056;
+    --color-primary-800: #214e47;
+    --color-primary-900: #20413c;
+    --color-primary-950: #0d2623;
+}
+
+._icon {
+    @apply inline-block fill-current;
+    height: 1em;
+    width: auto;
+    vertical-align: -0.125em;
+}

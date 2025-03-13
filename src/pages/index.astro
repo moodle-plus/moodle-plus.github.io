@@ -1,11 +1,65 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Bg from '@/assets/svg/background.svg';
+import InstallIco from '@/assets/svg/install-desktop.svg';
+import GithubIco from '@/assets/svg/github.svg';
+
+const compatibleWebsites = [
+	{ name: '大阪公立大学', url: 'lms.omu.ac.jp' },
+	{ name: '九州大学', url: 'moodle.s.kyushu-u.ac.jp' },
+	{ name: '会津大学', url: 'elms.u-aizu.ac.jp' },
+	{ name: '滋賀大学', url: 'sulms.shiga-u.ac.jp' },
+	{ name: '群馬大学', url: 'mdl.media.gunma-u.ac.jp' },
+	{ name: '愛知工業大学', url: 'cms.aitech.ac.jp' },
+];
+
+const experimentalCompatibleWebsites = [
+	{ name: '三重大学 (v4.1のみ)', url: 'lms-m41.mie-u.ac.jp' },
+	{ name: 'Waseda Moodle', url: 'wsdmoodle.waseda.jp' },
+];
 ---
 
 <Layout>
-	<Welcome />
+	<div class="relative min-h-screen flex items-center justify-center px-8 py-16">
+		<Bg class="absolute top-0 left-0 w-full h-full object-cover blur-3xl"></Bg>
+		<div class="relative">
+			<h1 class="text-3xl lg:text-4xl font-bold text-center mb-4">Moodle Plus</h1>
+			<p class="text-center text-sm lg:text-base mb-8">あなたのMoodleにちょっとした機能を追加するブラウザ拡張機能です！</p>
+			<div class="mb-8">
+				<a href="/get" class="block w-max mx-auto bg-primary-500 hover:bg-primary-400 text-white font-bold py-2 px-6 rounded-full text-center mb-4">
+					<InstallIco class="_icon h-5 mr-1.5" />インストール
+				</a>
+			</div>
+			<img src="/img/screenshot_01.png" alt="Moodle Plus" class="w-full max-w-xl mx-auto rounded-xl mb-8" />
+			<details class="w-full max-w-xl mx-auto rounded-xl bg-white border border-gray-300 dark:border-gray-700 overflow-clip group mb-8">
+				<summary class="text-sm px-4 py-2 bg-white hover:bg-gray-100 group-open:border-b border-gray-300 dark:border-gray-700 cursor-pointer">対応大学（Moodleサイト）一覧</summary>
+				<div class="p-4 text-sm">
+					<h2 class="font-bold">サポート中</h2>
+					<p class="mb-3 text-xs opacity-70">これらのMoodleではMoodle Plusの動作確認ができています。</p>
+					<ul class="pl-6 list-[revert] space-y-1 mb-6">
+						{compatibleWebsites.map((w) => (
+							<li>{w.name}（<code class="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
+						))}
+					</ul>
+					<h2 class="font-bold">試験対応中</h2>
+					<p class="mb-3 text-xs opacity-70">これらのMoodleでは動作テストが不十分なため、試験対応中としています。</p>
+					<ul class="pl-6 list-[revert] space-y-1">
+						{experimentalCompatibleWebsites.map((w) => (
+							<li>{w.name}（<code class="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
+						))}
+					</ul>
+				</div>
+			</details>
+			<div class="opacity-70 text-xs leading-relaxed text-center">
+				<p>この拡張機能は、Moodle ProjectやMoodleを使用する機関とは一切関係ありません。自己責任でお使いください。</p>
+				<p>&copy; 2023-present tomo0611 and contributors. Licensed under MIT</p>
+				<p class="mt-2">
+					<a href="https://github.com/tomo0611/moodle-plus" target="_blank" rel="noopener noreferrer" class="hover:opacity-70">
+						<GithubIco class="inline-block h-6 w-6" />
+					</a>	
+				</p>
+			</div>
+		</div>
+	</div>
 </Layout>
