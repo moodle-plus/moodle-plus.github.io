@@ -34,7 +34,7 @@ const experimentalCompatibleWebsites = [
 			</div>
 			<img src="/img/screenshot_01.png" alt="Moodle Plus" class="w-full max-w-xl mx-auto rounded-xl mb-8" />
 			<details class="w-full max-w-xl mx-auto rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 overflow-clip group mb-8">
-				<summary class="text-sm px-4 py-2 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 group-open:border-b border-gray-300 dark:border-gray-700 cursor-pointer">対応大学（Moodleサイト）一覧</summary>
+				<summary class="text-sm px-4 py-2 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 group-open:border-b border-gray-300 dark:border-gray-700 cursor-pointer">対応校（Moodleサイト）一覧</summary>
 				<div class="p-4 text-sm">
 					<h2 class="font-bold">対応</h2>
 					<p class="mb-3 text-xs opacity-70">これらのMoodleではMoodle Plusの動作確認ができています。</p>
@@ -44,16 +44,25 @@ const experimentalCompatibleWebsites = [
 						))}
 					</ul>
 					<h2 class="font-bold">試験対応中</h2>
-					<p class="mb-3 text-xs opacity-70">これらのMoodleでは動作テストが不十分なため、試験対応中としています。</p>
-					<ul class="pl-6 list-[revert] space-y-1">
+					<p class="mb-3 text-xs opacity-70">
+						これらのMoodleでは動作テストが不十分なため、試験対応中としています。<br>
+						動作中に問題が発生した場合は拡張機能を無効化してください。
+					</p>
+					<ul class="pl-6 list-[revert] space-y-1 mb-6">
 						{experimentalCompatibleWebsites.map((w) => (
 							<li>{w.name}（<code class="rounded bg-gray-100 dark:bg-gray-700 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
 						))}
 					</ul>
+					<p class="text-sm">
+						対応校の追加は<a href="https://github.com/tomo0611/moodle-plus/issues/new?template=02_university-request.yml" target="_blank" rel="noopener noreferrer" class="text-primary-500 hover:text-primary-400 hover:underline underline-offset-2">こちらからリクエスト</a>できます！（GitHubアカウントが必要です。）
+					</p>
 				</div>
 			</details>
-			<div class="opacity-70 text-xs leading-relaxed text-center">
-				<p>この拡張機能は、Moodle ProjectやMoodleを使用する機関とは一切関係ありません。自己責任でお使いください。</p>
+			<div class="opacity-70 text-xs leading-relaxed text-center max-w-2xl">
+				<p>
+					この拡張機能は、Moodle ProjectやMoodleを使用する機関とは一切関係ありません。自己責任でお使いください。<br>
+					This extension is not affiliated with or endorsed by the Moodle Project or any institution using Moodle. Use at your own risk.
+				</p>
 				<p>&copy; 2023-present tomo0611 and contributors. Licensed under MIT</p>
 				<p class="mt-2">
 					<a href="https://github.com/tomo0611/moodle-plus" target="_blank" rel="noopener noreferrer" class="hover:opacity-70">
