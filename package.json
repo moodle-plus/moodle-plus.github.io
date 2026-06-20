@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.8",
     "tailwindcss": "^4.3.1",
+    "moodle-plus": "github:tomo0611/moodle-plus#main",
     "ua-parser-js": "1"
   },
   "devDependencies": {

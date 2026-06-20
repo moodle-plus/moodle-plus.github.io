@@ -14,6 +14,9 @@ importers:
       astro:
         specifier: ^6.4.8
         version: 6.4.8(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)
+      moodle-plus:
+        specifier: github:tomo0611/moodle-plus#main
+        version: https://codeload.github.com/tomo0611/moodle-plus/tar.gz/bd143350b11d934b28821d20c55e2002fc2acfbc
       tailwindcss:
         specifier: ^4.3.1
         version: 4.3.1
@@ -1223,6 +1226,10 @@ packages:
 
   micromark@4.0.2:
     resolution: {integrity: sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==}
+
+  moodle-plus@https://codeload.github.com/tomo0611/moodle-plus/tar.gz/bd143350b11d934b28821d20c55e2002fc2acfbc:
+    resolution: {gitHosted: true, integrity: sha512-Qx7v4HdyrW5T5kedVVpUMhws0MXjW1rNKvH2iketxLxi74z/eMVpyZGoDgJ/ilfsXe9DC4/MYj4/mlWVaVjdtw==, tarball: https://codeload.github.com/tomo0611/moodle-plus/tar.gz/bd143350b11d934b28821d20c55e2002fc2acfbc}
+    version: 7.0.0
 
   mrmime@2.0.1:
     resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
@@ -2936,6 +2943,8 @@ snapshots:
       micromark-util-types: 2.0.2
     transitivePeerDependencies:
       - supports-color
+
+  moodle-plus@https://codeload.github.com/tomo0611/moodle-plus/tar.gz/bd143350b11d934b28821d20c55e2002fc2acfbc: {}
 
   mrmime@2.0.1: {}
 

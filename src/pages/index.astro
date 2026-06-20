@@ -1,26 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { sites } from 'moodle-plus/src/const';
 
 import Bg from '@/assets/svg/background.svg';
 import InstallIco from '@/assets/svg/install-desktop.svg';
 import GithubIco from '@/assets/svg/github.svg';
 
-const compatibleWebsites = [
-	{ name: '大阪公立大学', url: 'lms.omu.ac.jp' },
-	{ name: '九州大学', url: 'moodle.s.kyushu-u.ac.jp' },
-	{ name: '会津大学', url: 'elms.u-aizu.ac.jp' },
-	{ name: '滋賀大学', url: 'sulms.shiga-u.ac.jp' },
-	{ name: '群馬大学', url: 'mdl.media.gunma-u.ac.jp' },
-	{ name: '愛知工業大学', url: 'cms.aitech.ac.jp' },
-	{ name: 'Waseda Moodle', url: 'wsdmoodle.waseda.jp' },
-];
-
-const experimentalCompatibleWebsites = [
-	{ name: '三重大学 (v4.1のみ)', url: 'lms-m41.mie-u.ac.jp' },
-	{ name: '九州工業大学（飯塚）', url: 'ict-i.el.kyutech.ac.jp' },
-	{ name: '九州工業大学（戸畑・若松）', url: 'ict-t.el.kyutech.ac.jp' },
-	{ name: '放送大学（放送大学オンライン授業）', url: 'online.ouj.ac.jp' },
-];
+const compatibleWebsites = sites.filter((w) => w.experimental == null || w.experimental === false);
+const experimentalCompatibleWebsites = sites.filter((w) => w.experimental === true);
 ---
 
 <Layout>
@@ -43,7 +30,7 @@ const experimentalCompatibleWebsites = [
 					<p class="mb-3 text-xs opacity-70">これらのMoodleではMoodle Plusの動作確認ができています。</p>
 					<ul class="pl-6 list-[revert] space-y-1 mb-6">
 						{compatibleWebsites.map((w) => (
-							<li>{w.name}（<code class="rounded bg-gray-100 dark:bg-gray-700 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
+							<li>{w.name}（<code class="rounded bg-gray-100 dark:bg-gray-700 px-1 py-0.5 text-xs font-mono">{w.hostname}</code>）</li>
 						))}
 					</ul>
 					<h2 class="font-bold">試験対応中</h2>
@@ -53,7 +40,7 @@ const experimentalCompatibleWebsites = [
 					</p>
 					<ul class="pl-6 list-[revert] space-y-1 mb-6">
 						{experimentalCompatibleWebsites.map((w) => (
-							<li>{w.name}（<code class="rounded bg-gray-100 dark:bg-gray-700 px-1 py-0.5 text-xs font-mono">{w.url}</code>）</li>
+							<li>{w.name}（<code class="rounded bg-gray-100 dark:bg-gray-700 px-1 py-0.5 text-xs font-mono">{w.hostname}</code>）</li>
 						))}
 					</ul>
 					<p class="text-sm">
