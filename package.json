@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.1",
-    "astro": "^6.4.8",
-    "tailwindcss": "^4.3.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.8",
     "moodle-plus": "github:tomo0611/moodle-plus#main",
+    "tailwindcss": "^4.3.3",
     "ua-parser-js": "1"
   },
   "devDependencies": {
